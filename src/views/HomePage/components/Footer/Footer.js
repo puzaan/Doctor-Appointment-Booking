@@ -11,14 +11,13 @@ import { Divider } from '@mui/material';
 const Footer = () => {
 
   return (
-    <Box display={'flex'} flexDirection={'column'}>
+    <Box display={'flex'} flexDirection={'column'} paddingLeft={6} width={'100%'}>
       <Box
         display={'flex'}
         justifyContent={'start'}
         component={Link}
         to="/"
-        title="theFront"
-        width={80}
+        width={100}
       >
         <Box
           component={'img'}

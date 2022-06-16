@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import { Topbar, Logo, Footer, SearchBar, TabBtn } from './components';
 import { Box } from '@mui/material';
-import { LocalizationProvider } from '@mui/lab';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
 
 const HomePage = () => {
   const [allDoctorList, setAllDoctorLis] = useState([]);
@@ -19,7 +17,7 @@ const HomePage = () => {
     getAllDoctorList();
   }, []);
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
+    <Box>
       <Box>
         <Topbar />
       </Box>
@@ -37,18 +35,19 @@ const HomePage = () => {
       <Box>
         <TabBtn />
       </Box>
-      <Box bgcolor={'#F2F2F2'} marginTop={4}>
-        <Box
-          maxWidth={{ sm: 720, md: 1236 }}
-          width={1}
-          margin={'0 auto'}
-          paddingX={2}
-          paddingTop={2}
+      <Box bgcolor={'#F2F2F2'}>
+        <Footer />
+        {/* <Box
+        // maxWidth={{ sm: 720, md: 1236 }}
+        // width={1}
+        // margin={'0 auto'}
+        // paddingX={2}
+        // paddingTop={2}
         >
           <Footer />
-        </Box>
+        </Box> */}
       </Box>
-    </LocalizationProvider>
+    </Box>
   );
 };
 

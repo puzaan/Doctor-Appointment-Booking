@@ -5,7 +5,7 @@ import {
   NotFoundCover as NotFoundCoverView,
   HomePage as HomePage,
   DoctorVideoCall as DoctorVideoCall,
-  Videocall as VideoCall,
+  // Videocall as VideoCall,
 } from './views';
 
 const Routes = () => {
@@ -13,7 +13,7 @@ const Routes = () => {
     <Switch>
       <Route exact path="/" render={() => <HomePage />} />
       <Route exact path="/doctor" render={() => <DoctorVideoCall />} />
-      <Route exact path="/videocall" render={() => <VideoCall />} />
+      {/* <Route exact path="/videocall" render={() => <VideoCall />} /> */}
       <Route
         exact
         path="/not-found-cover"

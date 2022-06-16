@@ -5,6 +5,8 @@ import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
+import { LocalizationProvider } from '@mui/lab';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import Form from '../Form';
 import Download from '../Download';
 import { Box } from '@mui/material';
@@ -94,34 +96,36 @@ const TabBtn = () => {
     console.log(allDoctorList);
   }, []);
   return (
-    <TabsUnstyled>
-      <TabsList>
-        <Tab>Online Clinic</Tab>
-        <Tab>Buzzer</Tab>
-        <Tab>Doctalk</Tab>
-      </TabsList>
-      <TabPanel value={0}>
-        <Box display={'flex'} justifyContent={'center'}>
-          <Container maxWidth={900} paddingBottom={'0 !important'}>
-            <Form data={allDoctorList} />
-          </Container>
-        </Box>
-      </TabPanel>
-      <TabPanel value={1}>
-        <Box display={'flex'} justifyContent={'center'}>
-          <Container maxWidth={900} paddingBottom={'0 !important'}>
-            Soon...
-          </Container>
-        </Box>
-      </TabPanel>
-      <TabPanel value={2}>
-        <Box display={'flex'} justifyContent={'center'}>
-          <Container maxWidth={900} paddingBottom={'0 !important'}>
-            <Download />
-          </Container>
-        </Box>
-      </TabPanel>
-    </TabsUnstyled>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <TabsUnstyled>
+        <TabsList>
+          <Tab>Online Clinic</Tab>
+          <Tab>Buzzer</Tab>
+          <Tab>Doctalk</Tab>
+        </TabsList>
+        <TabPanel value={0}>
+          <Box display={'flex'} justifyContent={'center'}>
+            <Container maxWidth={900} paddingBottom={'0 !important'}>
+              <Form data={allDoctorList} />
+            </Container>
+          </Box>
+        </TabPanel>
+        <TabPanel value={1}>
+          <Box display={'flex'} justifyContent={'center'}>
+            <Container maxWidth={900} paddingBottom={'0 !important'}>
+              Soon...
+            </Container>
+          </Box>
+        </TabPanel>
+        <TabPanel value={2}>
+          <Box display={'flex'} justifyContent={'center'}>
+            <Container maxWidth={900} paddingBottom={'0 !important'}>
+              <Download />
+            </Container>
+          </Box>
+        </TabPanel>
+      </TabsUnstyled>
+    </LocalizationProvider>
   );
 };
 
